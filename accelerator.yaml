@@ -61,23 +61,23 @@ engine:
       - text: https://github.com/tsalm-pivotal/tm-forum-java.git
         with: "#gitUrl"
       - text: main
-        with: "#gitBranch"
+        with: "#gitBranch"#
       - text: tmf-product-catalog-management-api
         with: "#artifactId"
   - include: [ "**/*.java" ]
     chain:
     - type: ReplaceText
       substitutions:
-      - text: io.swagger
+      - text: io.sample
         with: "#pkgName"
     - type: RewritePath
-      regex: src/main/java/io/swagger/(.*)
+      regex: src/main/java/io/sample/(.*)
       rewriteTo: "'src/main/java/' + #pkgName.replace('.', '/') + '/' + #g1"
   - include: [ "pom.xml" ]
     chain:
       - type: ReplaceText
         substitutions:
-        - text: "<groupId>io.swagger</groupId>"
+        - text: "<groupId>io.sample</groupId>"
           with: "'<groupId>' + #pkgName + '</groupId>'"
         - text: swagger-spring
           with: "#artifactId"

@@ -44,7 +44,7 @@ engine:
     - type: OpenRewriteRecipe
       recipe: org.openrewrite.java.ChangePackage
       options:
-        oldFullyQualifiedPackageName: "'io.swagger'"
-        newFullyQualifiedPackageName: "#pkgName"
+        oldPackageName: "'io.swagger'"
+        newPackageName: "#pkgName"
         recursive: true
 

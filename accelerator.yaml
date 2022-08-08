@@ -44,7 +44,7 @@ engine:
     - type: OpenRewriteRecipe
       recipe: org.openrewrite.java.ChangePackage
       options:
-        oldPackageName: "'io.swagger'"
+        oldPackageName: "'com.example'"
         newPackageName: "#pkgName"
         recursive: true
 
